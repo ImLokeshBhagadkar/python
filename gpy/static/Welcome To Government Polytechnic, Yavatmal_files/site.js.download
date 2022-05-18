@@ -1,0 +1,288 @@
+function js_show_content(item_id)
+ { 
+  if(item_id != '1-0-1') {
+   var item_array = item_id.split("-"); 
+   if((item_array[1] > 0) && (item_array[2] > 0))
+    {
+	  //showLoader();
+      var action_url = url_path+"sites/ajax_get_left_nav";
+      var data = {'menu_id':item_array[1] };
+      $.ajax({
+         type: 'POST',
+         data: data,   
+         url: action_url,
+         success: function(response) {                
+			        $("#cmsleft").html(response);		
+			        $("#cmsleft").fadeIn();		
+					
+                  },
+              error:function (XMLHttpRequest, textStatus, errorThrown) {
+                 alert(XMLHttpRequest+' - '+textStatus+' - '+errorThrown);		  
+               }
+         });	 
+      var action_url = url_path+"sites/ajax_get_content_data";
+      var data = {'content_id':item_array[2] };
+      $.ajax({
+        type: 'POST',
+        data: data,   
+        url: action_url,
+        success: function(response) {                
+			      $("#cmscontent").html(response);		
+			      $("#cmscontent").slideDown();	
+				   $("#flashDiv").slideUp();
+				   $("#marDiv").slideUp();
+				   $("#deskDiv").slideUp();
+				   $("#extraDiv").slideUp();
+				   $("#photoDiv").slideUp();
+				   $("#footerDiv").slideDown();
+				   
+			      //hideLoader();
+                },
+            error:function (XMLHttpRequest, textStatus, errorThrown) {
+               alert(XMLHttpRequest+' - '+textStatus+' - '+errorThrown);		  
+             }
+       });
+	}
+   else   
+    {
+	  if(item_array[1] > 0)
+	   {
+	     //showLoader();
+         var action_url = url_path+"sites/ajax_get_left_nav";
+         var data = {'menu_id':item_array[1] };
+         $.ajax({
+            type: 'POST',
+            data: data,   
+            url: action_url,
+            success: function(response) {                
+			           $("#cmsleft").html(response);		
+			           $("#cmsleft").fadeIn();
+					   //hideLoader();				 
+                     },
+                 error:function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert(XMLHttpRequest+' - '+textStatus+' - '+errorThrown);		  
+                  }
+            });
+	      }
+	  if(item_array[2] > 0)
+	   {
+	     //showLoader();
+	     var action_url = url_path+"sites/ajax_get_content_data";
+         var data = {'content_id':item_array[2] };
+         $.ajax({
+           type: 'POST',
+           data: data,   
+           url: action_url,
+           success: function(response) {                
+			         $("#cmscontent").html(response);		
+			         $("#cmscontent").slideDown();	
+					 $("#flashDiv").slideUp();
+				     $("#marDiv").slideUp();
+				     $("#deskDiv").slideUp();
+					  $("#photoDiv").slideUp();
+				     $("#extraDiv").slideUp();
+				     $("#footerDiv").slideDown();
+			         //hideLoader();
+                   },
+               error:function (XMLHttpRequest, textStatus, errorThrown) {
+                  alert(XMLHttpRequest+' - '+textStatus+' - '+errorThrown);		  
+                }
+          });
+	   }
+	}
+   return false;   
+ }
+  else{
+	  var item_array = item_id.split("-"); 
+   if((item_array[1] > 0) && (item_array[2] > 0))
+    {
+	  //showLoader();
+      var action_url = url_path+"sites/ajax_get_left_nav";
+      var data = {'menu_id':item_array[1] };
+      $.ajax({
+         type: 'POST',
+         data: data,   
+         url: action_url,
+         success: function(response) {                
+			        $("#cmsleft").html(response);		
+			        $("#cmsleft").fadeIn();	
+					$("#cmsleft").slideUp();	
+                  },
+              error:function (XMLHttpRequest, textStatus, errorThrown) {
+                 alert(XMLHttpRequest+' - '+textStatus+' - '+errorThrown);		  
+               }
+         });	 
+      var action_url = url_path+"sites/ajax_get_content_data";
+      var data = {'content_id':item_array[2] };
+      $.ajax({
+        type: 'POST',
+        data: data,   
+        url: action_url,
+        success: function(response) {                
+			      $("#cmscontent").html(response);		
+			      $("#cmscontent").slideDown();	
+				  $("#cmsleft").slideUp();	
+				   $("#flashDiv").slideDown();
+				     $("#marDiv").slideDown();
+				     $("#deskDiv").slideDown();
+					  $("#photoDiv").slideDown();
+				     $("#extraDiv").slideDown();
+				     $("#footerDiv").slideDown();
+			      //hideLoader();
+                },
+            error:function (XMLHttpRequest, textStatus, errorThrown) {
+               alert(XMLHttpRequest+' - '+textStatus+' - '+errorThrown);		  
+             }
+       });
+	}
+   else   
+    {
+	  if(item_array[1] > 0)
+	   {
+	     //showLoader();
+         var action_url = url_path+"sites/ajax_get_left_nav";
+         var data = {'menu_id':item_array[1] };
+         $.ajax({
+            type: 'POST',
+            data: data,   
+            url: action_url,
+            success: function(response) {                
+			           $("#cmsleft").html(response);		
+			           $("#cmsleft").fadeIn();
+					  $("#cmsleft").slideUp();	
+					   //hideLoader();				 
+                     },
+                 error:function (XMLHttpRequest, textStatus, errorThrown) {
+                    alert(XMLHttpRequest+' - '+textStatus+' - '+errorThrown);		  
+                  }
+            });
+	      }
+	  if(item_array[2] > 0)
+	   {
+	     //showLoader();
+	     var action_url = url_path+"sites/ajax_get_content_data";
+         var data = {'content_id':item_array[2] };
+         $.ajax({
+           type: 'POST',
+           data: data,   
+           url: action_url,
+           success: function(response) {                
+			         $("#cmscontent").html(response);		
+			         $("#cmscontent").slideDown();	
+					  $("#cmsleft").slideUp();	
+					 $("#flashDiv").slideDown();
+				     $("#marDiv").slideDown();
+				     $("#deskDiv").slideDown();
+					  $("#photoDiv").slideDown();
+				     $("#extraDiv").slideDown();
+				     $("#footerDiv").slideDown();
+					 
+			         //hideLoader();
+                   },
+               error:function (XMLHttpRequest, textStatus, errorThrown) {
+                  alert(XMLHttpRequest+' - '+textStatus+' - '+errorThrown);		  
+                }
+          });
+	   }
+	}
+   return false;
+  }
+ }
+ 
+function js_get_photo_content_data(var_id,var_cat)
+{
+   //showLoader();
+   var action_url = url_path+"sites/ajax_get_photo_content_data";// alert(action_url);
+   var data = {'rid':var_id,'cat_name':var_cat };
+   $.ajax({
+        type: 'POST',
+        data: data,   
+        url: action_url,
+        success: function(response) {                
+			      $("#cmscontent").html(response);		
+			      $("#cmscontent").slideDown();	
+				  $("#flashDiv").slideUp();
+				   $("#marDiv").slideUp();
+				   $("#deskDiv").slideUp();
+				    $("#photoDiv").slideUp();
+				   $("#extraDiv").slideUp();
+				    $("#footerDiv").slideDown();
+			      //hideLoader();
+                },
+            error:function (XMLHttpRequest, textStatus, errorThrown) {
+               alert(XMLHttpRequest+' - '+textStatus+' - '+errorThrown);		  
+             }
+       });
+ }
+function js_get_content_data(cont_id)
+ {
+   //showLoader();
+   var action_url = url_path+"sites/ajax_get_content_data"; 
+   var data = {'content_id':cont_id };
+   $.ajax({
+        type: 'POST',
+        data: data,   
+        url: action_url,
+        success: function(response) {                
+			      $("#cmscontent").html(response);		
+			      $("#cmscontent").slideDown();
+				   $("#flashDiv").slideUp();
+					 $("#marDiv").slideUp();
+				    $("#deskDiv").slideUp();
+					$("#extraDiv").slideUp();
+					 $("#footerDiv").slideDown();
+			      //hideLoader();
+                },
+            error:function (XMLHttpRequest, textStatus, errorThrown) {
+               alert(XMLHttpRequest+' - '+textStatus+' - '+errorThrown);		  
+             }
+       });
+ }
+ function js_get_more_data(desk_id)
+ { 
+   var action_url = url_path+"sites/ajax_get_more_data";
+   var data = {'desk_id':desk_id };
+   $.ajax({
+        type: 'POST',
+        data: data,   
+        url: action_url,
+        success: function(response) {                
+			      $("#cmscontent").html(response);		
+			      $("#cmscontent").slideDown();
+				  $("#flashDiv").slideUp();
+				   $("#marDiv").slideUp();
+                   $("#deskDiv").slideUp();
+				   $("#extraDiv").slideUp();
+				    $("#footerDiv").slideDown();
+			      //hideLoader();
+                },
+            error:function (XMLHttpRequest, textStatus, errorThrown) {
+               alert(XMLHttpRequest+' - '+textStatus+' - '+errorThrown);		  
+             }
+       });
+ }
+ function js_get_photo_category_more()
+ {
+   var action_url = url_path+"sites/ajax_get_photo_category_more";
+   
+   $.ajax({
+        type: 'POST',
+        url: action_url,
+        success: function(response) {                
+			      $("#cmscontent").html(response);		
+			      $("#cmscontent").slideDown();
+				  $("#flashDiv").slideUp();
+				   $("#marDiv").slideUp();
+				   $("#deskDiv").slideUp();
+				    $("#photoDiv").slideUp();
+                   $("#extraDiv").slideUp();
+				    $("#footerDiv").slideDown();
+			      //hideLoader();
+                },
+            error:function (XMLHttpRequest, textStatus, errorThrown) {
+               alert(XMLHttpRequest+' - '+textStatus+' - '+errorThrown);		  
+             }
+       });
+ }
+ 
+ 

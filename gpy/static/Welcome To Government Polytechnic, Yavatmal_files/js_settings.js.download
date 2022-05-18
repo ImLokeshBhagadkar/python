@@ -1,0 +1,4 @@
+var url_path = "/gpy/";
+function showLoader() { jQuery('#kam').showLoading(); }
+function hideLoader() { jQuery('#kam').hideLoading(); }
+function js_cancel_div_slideup(hidediv) { $("#"+hidediv).slideUp(); return false; }
